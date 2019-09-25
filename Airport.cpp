@@ -6,29 +6,33 @@
 
 
 	
-Airport::Airport(int Mgate, int Mrunway, string name, string location)
-{
-	Name = name;
-	Location = location;
-	Gate = 0;
-	Runway = 0;
-	count = 0;
-	max_gate = Mgate;
-	max_runway = Mrunway;
-}
-void Airport::get_plane_detail(Plane* name)
+	Airport::Airport(int Mgate, int Mrunway, string name, string location)
 	{
-		count++; //count is now 1
-		pilots[count] = name->pilot;
-		count++;
-		pilots[count] = name->coPilot;
+		Name = name;
+		Location = location;
+		Gate = 0;
+		Runway = 0;
+		count = 0;
+		max_gate = Mgate;
+		max_runway = Mrunway;
+	}
+	void Airport::get_plane_detail(Plane* name)
+	{
+			count++; //count is now 1
+			pilots[count] = name->pilot;
+			count++;
+			pilots[count] = name->coPilot;
 
-		cout<<"Pilots: "<<endl;
+			cout<<"Pilots: "<<endl;
 
-		for(int i = 1; i < count+1; i++)
-		{
-			cout<< pilots[i]->name<<endl;
-		}
+			for(int i = 1; i < count+1; i++)
+			{
+				if(name->pilot->ID == pilots[i]->ID)
+				{
+					cout<< pilots[i]->name<<endl;
+				}
+				
+			}
 	}
 
 	bool Airport::gate_availability()
