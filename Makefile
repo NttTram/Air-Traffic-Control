@@ -1,8 +1,8 @@
-output: main-3-1.o Plane.o Pilot.o Airport.o
-	g++ main-3-1.o Plane.o Pilot.o Airport.o -o output
+output: Program.o Plane.o Pilot.o Airport.o
+	g++ Program.o Plane.o Pilot.o Airport.o -o output
 
-main-3-1.o: main-3-1.cpp 
-	g++ -c main-3-1.cpp 
+Program.o: Program.cpp 
+	g++ -c Program.cpp 
 
 Plane.o: Plane.cpp Plane.h
 	g++ -c Plane.cpp Plane.h
