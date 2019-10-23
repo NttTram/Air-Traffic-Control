@@ -5,6 +5,8 @@
 #include <iostream>
 #include "Pilot.h"
 #include "Plane.h"
+#include "AirController.h"
+#include <vector>
 using namespace std;
 
 class Airport
@@ -13,25 +15,35 @@ class Airport
 
 public:
 	Airport();
-	Airport (int Mgate, int Mrunway, string name, string location);
+	Airport(int Mgate, int Mrunway, string name, string location);
 	string Name;
 	string Location;
 	int Gate;
 	int Runway;
-	Plane* planes[6];
-	Pilot* pilots[12];
+	
 	int max_gate;
 	int max_runway;
-	int count;
+	int countPilot;
+	int countPlane;
+	int countController;
 
-	void get_plane_detail(Plane* name);
+
+
+	vector <Plane*> planes;
+	vector <Pilot*> pilots;
+	vector <AirController*> controller;
+
+	void get_airport_details();
+	void get_pilot(Pilot* pil);
+	void get_plane(Plane* name);
+	void add_air_controller(AirController* aircon);
+	
 
 	
-	bool gate_availability();
 
-	bool runway_availability();
 
 	~Airport();
+
 };
 
 #endif

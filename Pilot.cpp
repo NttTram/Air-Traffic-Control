@@ -1,42 +1,50 @@
 #include "Pilot.h"
 
-int Pilot::ID = 0;
-
-Pilot::Pilot()
-{
-	flight_time = 0;
-}
-
-Pilot::Pilot(string pName, int pAge, string pGender)
-{
-	ID ++;
-	name = pName;
-	age = pAge;
-	gender = pGender;
-}
-
-void Pilot::set_flight_time(int time)
-{
-	flight_time = time;
-}
-
-
-void Pilot::add_flight_time(int time)
-{
-	flight_time += time;
-}
-
-void Pilot::get_details()
-{
-	cout<<"Name: "<<name<<endl;
-	cout<<"Age: "<<age<<endl;
-	cout<<"Gender: "<<gender<<endl;
-	cout<<"Flight time: "<<flight_time<<endl;
+//int Pilot::countID = 0;
+	Pilot::Pilot(string pName, int pAge, string pGender) : Person(pName, pAge, pGender) //Inheritance
+	{	// Starting flight hour
+		flight_time = 0;
+		// Once created they will have an ID
+		ID = Person::ID;
 	
-}
+	}
 
 
-Pilot::~Pilot()
-{
-	cout<<name<<" is no longer a pilot."<<endl;
-}
+	void Pilot::set_flight_time(int Ptime)
+	{	// Can set flight hour
+		flight_time = Ptime;
+	}
+
+	void Pilot::add_flight_time(int Ptime)
+	{	// Add flight time
+		flight_time += Ptime;
+	}
+
+	// Example of polymorphism
+	void Pilot::get_details()
+	{	
+		// Get all info of pilot
+		cout<<"Pilot ID: "<<ID<<endl;
+		Person::get_details();
+		cout<<"Flight time: "<<flight_time<<" hours"<<endl;
+	}
+
+
+// bool Pilot::request_landing(Plane* name)
+// {
+// 	cout<<"Request landing for "<<name->callsign<<" has been sent."<<endl;
+// 	return true;
+// }
+// bool Pilot::request_departuring(Plane* name)
+// {
+// 		cout<<"Request departuring for "<<name->callsign<<" has been sent."<<endl;
+// 	return true;
+// }
+
+
+
+
+	Pilot::~Pilot()
+	{
+		cout<<"Pilot fired."<<endl;
+	}

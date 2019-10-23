@@ -1,5 +1,6 @@
 #ifndef PLANE_H
 #define PLANE_H
+
 #include "Pilot.h"
 
 #include <string>
@@ -10,7 +11,7 @@ using namespace std;
 class Plane
 {
 public:
-	Plane();
+
 	Plane(string pName, string callSign, int maxPassenger);
 
 	int static PlaneID;
@@ -20,14 +21,13 @@ public:
 	int max_passenger;
 	int current_passenger;
 
-	Pilot *pilot, *coPilot;
+	Pilot *captain, *coPilot;
 
-	int fuel;
 	string destination;
 	string from;
 
-	void set_pilot(Pilot *captain);
-	void set_copilot(Pilot *copilot);
+	void set_pilot(Pilot* Pcaptain, Pilot* copilot);
+	// void set_copilot(Pilot* copilot);
 
 	void set_passenger(int passenger);
 
@@ -35,7 +35,8 @@ public:
 
 	void get_details();
 
-
+	void landing();
+	void departuring();
 
 	~Plane();
 	
