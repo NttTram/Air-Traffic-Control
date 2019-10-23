@@ -118,6 +118,104 @@ cin>>name; //  Request to enter an Airport name.
 		{
 		  	cout << "Pilot"<<endl; // prints "1",
 	     	valid = true;
+
+	
+
+	// portID++;
+	// 	cout<<"PORT ID: "<<portID<<endl;
+	cout<<"					The Pilot is new."<<endl<<" _______________________________________________________________________________________________________ "<<endl;
+	cout<<"|				Please enter the following:						|"<<endl<<"|_______________________________________________________________________________________________________|"<<endl;
+	cout<<"			Pilot's name";
+	cin >> pName; 
+	//cout<<endl;
+
+	cout<<"			Pilot's age";
+	cin>>pAge;
+	//cout<<endl;
+
+	cout<<"			The Pilot's gender: ";
+	cin>>pGender;
+	//cout<<endl;
+
+	Pilot[pilotID] = new Pilot(pName, pAge, pGender);
+
+	system("clear");
+
+	cout<<"				The Pilot is called "<<Pilot[pilotID]->pName<< " is added into the system."<<endl;
+	cout<<"					To continue enter any keys."<<endl;
+	cin>>empty;
+	
+	
+
+	system("clear");
+
+	//PLANE
+	cout<<"					The Plane is new."<<endl<<" _______________________________________________________________________________________________________ "<<endl;
+	cout<<"|				Please enter the following:						|"<<endl<<"|_______________________________________________________________________________________________________|"<<endl;
+	cout<<"			Plane's name:";
+	cin >> pName; 
+	//cout<<endl;
+
+	cout<<"			Plane's callsign:";
+	cin>>callsign;
+	//cout<<endl;
+
+	cout<<"			The Plane's maxPassenger: ";
+	cin>>maxPassenger;
+	//cout<<endl;
+
+	Plane[planeID] = new Plane(pName, callSign, maxPassenger);
+
+	system("clear");
+
+	cout<<"				The Plane is called "<<Plane[planeID]->pName<< " is added into the system."<<endl;
+	cout<<"					To continue enter any keys."<<endl;
+	cin>>empty;
+	
+	
+
+	system("clear");
+
+
+	//AIRCONTROLLER
+	cout<<"					The AirController is new."<<endl<<" _______________________________________________________________________________________________________ "<<endl;
+	cout<<"|				Please enter the following:						|"<<endl<<"|_______________________________________________________________________________________________________|"<<endl;
+	cout<<"			AirController's name:";
+	cin >> pName; 
+	//cout<<endl;
+
+	cout<<"			AirController's age:";
+	cin>>pAge;
+	//cout<<endl;
+
+	cout<<"			The AirController's gender ";
+	cin>>pGender;
+	//cout<<endl;
+
+	AirController[AircontrollerID] = new AirController(pName, pAge, pGender);
+
+	system("clear");
+
+	cout<<"				The AirController is called "<<AirController[aicontrollerID]->pName<< " is added into the system."<<endl;
+	cout<<"					To continue enter any keys."<<endl;
+	cin>>empty;
+	
+	
+
+	system("clear");
+
+
+
+
+
+
+
+
+
+
+
+
+
 		}
 		else if( Select == "2")
 		{
